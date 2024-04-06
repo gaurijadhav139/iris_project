@@ -18,7 +18,7 @@ def model_prediction():
     data = request.form 
     print(data)
 
-    load_model = pickle.load(open(r'C:\Users\gauri\Documents\flask_model _implementation\model.pkl','rb'))
+    load_model = pickle.load(open(r'model.pkl','rb'))
     print(load_model)
 
     user_data = [[float(data['x1_sepal_length']),
@@ -43,4 +43,4 @@ def model_prediction():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False,host='0.0.0.0',port=8080)
